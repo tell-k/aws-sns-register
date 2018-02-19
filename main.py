@@ -1,4 +1,5 @@
 import os
+import time
 import csv
 
 import boto3
@@ -55,6 +56,9 @@ def main():
                 print('Subscribe OK {}'.format(tel_number))
             else:
                 print('Subscribe NG {}'.format(tel_number))
+
+            # APIに負荷を掛けないようように1秒スリープさせる
+            time.sleep(1)
 
     print('Finish subscribing sns topic.')
 
